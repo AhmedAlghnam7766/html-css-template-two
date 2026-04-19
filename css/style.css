@@ -2,8 +2,12 @@
   /* Colors */
   --primary-color: #00c7fc;
   --secondary-color: #ffffff;
+  --transparent-color: rgba(15, 116, 143, 0.7);
+  --overlay-color: rgba(0, 0, 0, 0.6);
   /* Dimensions */
-  --icon-width: 1.25rem;
+  --small-icon-width: 1.25rem;
+  --icon-width: 1.5rem;
+  --large-icon-width: 2rem;
 }
 /** Start Global Rules */
 * {
@@ -24,7 +28,6 @@ body {
   font-family: "Open Sans", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
-  background-color: black;
 }
 ul {
   list-style: none;
@@ -91,8 +94,8 @@ header nav {
   align-items: center;
 }
 header nav .menu {
-  color: white;
-  width: calc(var(--icon-width) + 0.125rem);
+  color: var(--secondary-color);
+  width: calc(var(--small-icon-width) + 0.125rem);
 }
 /* Disappear at large screens */
 @media (min-width: 768px) {
@@ -114,7 +117,8 @@ header nav ul {
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: var(--overlay-color);
+    width: 100%;
   }
   header nav .menu:hover + ul a {
     padding: 0.9375rem;
@@ -142,13 +146,106 @@ header nav .form {
   color: var(--secondary-color);
   margin-left: 1.875rem;
   border-left: 1px solid var(--secondary-color);
+  /* So the search icon moved based on it */
+  position: relative;
 }
 header nav .form svg {
-  width: var(--icon-width);
+  width: var(--small-icon-width);
   position: absolute;
   top: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateY(-50%);
   right: 0;
 }
 /* This to know that at the last commit i created the head section */
 /** End Header */
+
+/** Start Landing */
+.landing {
+  min-height: 100vh;
+  /* The background color for if the image didn't load */
+  background-color: #1f2021;
+  background-image: url(../assets/images/landing.jpg);
+  background-size: cover;
+  position: relative;
+}
+/* A layer above the landing */
+.landing .overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--overlay-color);
+}
+.landing .text {
+  position: absolute;
+  width: 50%;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  padding: 3.125rem;
+  color: var(--secondary-color);
+  background-color: var(--transparent-color);
+  display: flex;
+  justify-content: flex-end;
+}
+@media (max-width: 767px) {
+  .landing .text {
+    width: 100%;
+  }
+}
+.landing .text .content {
+  max-width: 31.25rem;
+}
+@media (max-width: 767px) {
+  .landing .text .content {
+    max-width: 100%;
+  }
+}
+.landing .text .content h2 {
+  font-size: 2rem;
+  font-weight: normal;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+}
+.landing .text .content p {
+  font-size: 0.875rem;
+  line-height: 2;
+}
+.landing .change-background {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #ddd;
+  width: var(--large-icon-width);
+}
+@media (max-width: 767px) {
+  .landing .change-background {
+    display: none;
+  }
+}
+.landing .lucide-chevron-right {
+  right: 1.5625rem;
+}
+.landing .lucide-chevron-left {
+  left: 1.5625rem;
+}
+.landing .bullets {
+  position: absolute;
+  left: 50%;
+  bottom: 1.875rem;
+  transform: translate(-50%);
+  display: flex;
+}
+.landing .bullets li {
+  width: var(--small-icon-width);
+  height: var(--small-icon-width);
+  border: 1px solid var(--secondary-color);
+  border-radius: 50%;
+  margin-right: 0.625rem;
+}
+.landing .bullets li.active {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+/** End Landing */
