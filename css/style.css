@@ -314,10 +314,19 @@ header nav .form svg {
 }
 .services .content .card {
   display: flex;
+  align-items: flex-start;
   padding: 1.25rem;
 }
 .services .content .card svg {
   width: 9.75rem;
   margin-right: 3.125rem;
+}
+.services .content .card .text h3 {
+  color: var(--primary-color);
+  margin-bottom: 1.875rem;
+}
+.services .content .card .text p {
+  color: var(--light-color);
+  line-height: var(--p-line-height);
 }
 /** End Services */
