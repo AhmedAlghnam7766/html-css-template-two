@@ -6,6 +6,7 @@
   --transparent-color: rgba(15, 116, 143, 0.7);
   --overlay-color: rgba(0, 0, 0, 0.6);
   /* Dimensions */
+  --section-padding: 6.25rem;
   --small-icon-width: 1.25rem;
   --icon-width: 1.5rem;
   --large-icon-width: 2rem;
@@ -36,6 +37,9 @@ ul {
 }
 a {
   text-decoration: none;
+}
+svg {
+  width: var(--icon-width);
 }
 .container {
   margin-left: auto;
@@ -298,3 +302,10 @@ header nav .form svg {
   border-color: var(--primary-color);
 }
 /** End Landing */
+
+/** Start Services */
+.services {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+}
+/** End Services */
