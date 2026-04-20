@@ -308,4 +308,16 @@ header nav .form svg {
   padding-top: var(--section-padding);
   padding-bottom: var(--section-padding);
 }
+.services .content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.services .content .card {
+  display: flex;
+  padding: 1.25rem;
+}
+.services .content .card svg {
+  width: 9.75rem;
+  margin-right: 3.125rem;
+}
 /** End Services */
