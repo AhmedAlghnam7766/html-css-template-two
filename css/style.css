@@ -2,12 +2,14 @@
   /* Colors */
   --primary-color: #00c7fc;
   --secondary-color: #ffffff;
+  --light-color: #777;
   --transparent-color: rgba(15, 116, 143, 0.7);
   --overlay-color: rgba(0, 0, 0, 0.6);
   /* Dimensions */
   --small-icon-width: 1.25rem;
   --icon-width: 1.5rem;
   --large-icon-width: 2rem;
+  --p-line-height: 2;
 }
 /** Start Global Rules */
 * {
@@ -57,6 +59,53 @@ a {
   }
 }
 /** End Global Rules */
+/** Start Components */
+/* Main Heading */
+.main-heading {
+  text-align: center;
+  padding: 1.25rem;
+}
+.main-heading > h2 {
+  font-weight: normal;
+  font-size: 2.5rem;
+  margin-bottom: 4.375rem;
+  text-transform: uppercase;
+  position: relative;
+}
+.main-heading > h2::before,
+.main-heading > h2::after {
+  content: "";
+  position: absolute;
+}
+/* The line */
+.main-heading > h2::before {
+  height: 2px;
+  width: 7.5rem;
+  background-color: #333333;
+  bottom: -2.1875rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+/* The circle */
+.main-heading > h2::after {
+  background-color: var(--secondary-color);
+  bottom: -2.1875rem;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  height: 1.125rem;
+  width: 1.125rem;
+  border-radius: 50%;
+  border: 2px solid #333333;
+}
+.main-heading > p {
+  width: 550px;
+  /* To take 100% when screen is small */
+  max-width: 100%;
+  margin: 0 auto 4.0625rem;
+  color: var(--light-color);
+  line-height: var(--p-line-height);
+}
+/** End Components */
 
 /** Start Header */
 header {
@@ -210,7 +259,7 @@ header nav .form svg {
 }
 .landing .text .content p {
   font-size: 0.875rem;
-  line-height: 2;
+  line-height: var(--p-line-height);
 }
 .landing .change-background {
   position: absolute;
@@ -225,10 +274,10 @@ header nav .form svg {
   }
 }
 .landing .lucide-chevron-right {
-  right: 1.5625rem;
+  right: 0.863rem;
 }
 .landing .lucide-chevron-left {
-  left: 1.5625rem;
+  left: 0.863rem;
 }
 .landing .bullets {
   position: absolute;
