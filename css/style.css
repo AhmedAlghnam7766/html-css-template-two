@@ -13,6 +13,8 @@
   --large-icon-width: 2rem;
   --p-line-height: 2;
   --z-fixed: 100;
+  /* Transitions */
+  --main-transition: 0.3s;
 }
 /** Start Global Rules */
 * {
@@ -66,6 +68,11 @@ svg {
 }
 /** End Global Rules */
 /** Start Components */
+/* Section */
+.section {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+}
 /* Main Heading */
 .main-heading {
   text-align: center;
@@ -193,7 +200,7 @@ header nav ul a {
   display: block;
   color: var(--secondary-color);
   font-size: 0.875rem;
-  transition: 0.3s;
+  transition: var(--main-transition);
   padding: 2.5rem 0.625rem;
   /* To make the bottom border appear when hover */
   position: relative;
@@ -306,10 +313,6 @@ header nav .form svg {
 /** End Landing */
 
 /** Start Services */
-.services {
-  padding-top: var(--section-padding);
-  padding-bottom: var(--section-padding);
-}
 .services .content {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -348,8 +351,6 @@ header nav .form svg {
 
 /** Start Design */
 .design {
-  padding-top: var(--section-padding);
-  padding-bottom: var(--section-padding);
   background-image: url(../assets/images/design-features.jpg);
   background-size: cover;
   position: relative;
@@ -404,8 +405,72 @@ header nav .form svg {
 /** End Design */
 
 /** Start Portfolio */
-.portfolio {
-  padding-top: var(--section-padding);
-  padding-bottom: var(--section-padding);
+.portfolio .shuffle {
+  display: flex;
+  justify-content: center;
+}
+.portfolio .shuffle li {
+  padding: 0.625rem 1.25rem;
+  border-radius: 0.625rem;
+  cursor: pointer;
+}
+.portfolio .shuffle li.active {
+  background-color: var(--primary-color);
+}
+.portfolio .images-container {
+  margin-top: 3.75rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+.portfolio .images-container .box {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+.portfolio .images-container .box:hover .caption {
+  bottom: 0;
+}
+.portfolio .images-container .box:hover img {
+  transform: rotate(3deg) scale(1.1);
+}
+@media (min-width: 768px) {
+  .portfolio .images-container .box {
+    flex-basis: 50%;
+  }
+}
+@media (min-width: 1200px) {
+  .portfolio .images-container .box {
+    flex-basis: 25%;
+  }
+}
+.portfolio .images-container .box img {
+  max-width: 100%;
+  transition: var(--main-transition);
+}
+.portfolio .images-container .box .caption {
+  position: absolute;
+  left: 0;
+  padding: 1.25rem;
+  background-color: white;
+  width: 100%;
+  transition: var(--main-transition);
+  bottom: -100%;
+}
+.portfolio .images-container .box .caption h4 {
+  color: var(--primary-color);
+  margin-bottom: 0.625rem;
+}
+.portfolio .images-container .box .caption p {
+  color: var(--light-color);
 } 
+.portfolio .more {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.9375rem 1.875rem;
+  display: block;
+  width: fit-content;
+  margin: 2.5rem auto;
+  text-decoration: none;
+  text-transform: uppercase;
+}
 /** End Portfolio */
