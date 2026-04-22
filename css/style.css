@@ -7,10 +7,12 @@
   --overlay-color: rgba(0, 0, 0, 0.6);
   /* Dimensions */
   --section-padding: 6.25rem;
+  --text-card-padding: 3.125rem;
   --small-icon-width: 1.25rem;
   --icon-width: 1.5rem;
   --large-icon-width: 2rem;
   --p-line-height: 2;
+  --z-fixed: 100;
 }
 /** Start Global Rules */
 * {
@@ -109,6 +111,15 @@ svg {
   color: var(--light-color);
   line-height: var(--p-line-height);
 }
+/* Overlay */
+.overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--overlay-color);
+}
 /** End Components */
 
 /** Start Header */
@@ -117,7 +128,7 @@ header {
   position: absolute;
   left: 0;
   width: 100%;
-  z-index: 2;
+  z-index: var(--z-fixed);
 }
 header .container {
   display: flex;
@@ -186,7 +197,7 @@ header nav ul a {
   padding: 2.5rem 0.625rem;
   /* To make the bottom border appear when hover */
   position: relative;
-  z-index: 2;
+  z-index: var(--z-fixed);
 }
 header nav ul a.active,
 header nav ul a:hover {
@@ -221,22 +232,13 @@ header nav .form svg {
   background-size: cover;
   position: relative;
 }
-/* A layer above the landing */
-.landing .overlay {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: var(--overlay-color);
-}
 .landing .text {
   position: absolute;
   width: 50%;
   top: 50%;
   left: 0;
   transform: translateY(-50%);
-  padding: 3.125rem;
+  padding: var(--text-card-padding);
   color: var(--secondary-color);
   background-color: var(--transparent-color);
   display: flex;
@@ -343,3 +345,60 @@ header nav .form svg {
   line-height: var(--p-line-height);
 }
 /** End Services */
+
+/** Start Design */
+.design {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+  background-image: url(../assets/images/design-features.jpg);
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+  height: 37.5rem;
+  display: flex;
+  align-items: center;
+}
+.design .container {
+  position: relative;
+}
+.design .image,
+.design .text {
+  z-index: var(--z-fixed);
+  position: relative;
+  flex: 1;
+}
+.design .image {
+  text-align: center;
+}
+@media (max-width: 767px) {
+  .design .image {
+    display: none;
+  }
+}
+.design .image img {
+  position: relative;
+  bottom: -9.375rem;
+}
+.design .text {
+  color: white;
+  background-color: var(--transparent-color);
+  padding: var(--text-card-padding);
+  display: flex;
+  flex-flow: column;
+}
+.design .text h2 {
+  font-weight: normal;
+  margin-bottom: 2.5rem;
+  text-transform: uppercase;
+}
+.design .text li {
+  padding: 0.9375rem 0;
+}
+.design .text li::before {
+  content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%23ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>');
+  display: inline-block;
+  width: 1.5rem;
+  margin-right: .9375rem;
+  vertical-align: middle;
+}
+/** End Design */
