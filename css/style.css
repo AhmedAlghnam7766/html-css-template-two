@@ -546,6 +546,25 @@ header nav .form svg {
   display: block;
   border: none;
   cursor: pointer;
-
 }
 /** End Video */
+
+/** Start About */
+.about {
+  overflow: hidden;
+  text-align: center;
+  padding-bottom: 0;
+}
+.about img {
+  position: relative;
+  bottom: -120px;
+  margin-top: -120px;
+  max-width: 100%;
+}
+@media (max-width: 767px) {
+  .about img {
+  bottom: -60px;
+  margin-top: -60px;
+}
+}
+/** End About */
