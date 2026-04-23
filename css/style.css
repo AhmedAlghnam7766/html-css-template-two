@@ -9,6 +9,7 @@
   --section-padding: 6.25rem;
   --section-height: 37.5rem;
   --text-card-padding: 3.125rem;
+  --small-font-size: 0.875rem;
   --small-icon-width: 1.25rem;
   --icon-width: 1.5rem;
   --large-icon-width: 2rem;
@@ -191,7 +192,7 @@ header nav ul a {
   /* To respect our properties */
   display: block;
   color: var(--secondary-color);
-  font-size: 0.875rem;
+  font-size: var(--small-font-size);
   transition: var(--main-transition);
   padding: 2.5rem 0.625rem;
   /* To make the bottom border appear when hover */
@@ -272,7 +273,7 @@ header nav .form svg {
   margin-bottom: 1.25rem;
 }
 .landing .text .content p {
-  font-size: 0.875rem;
+  font-size: var(--small-font-size);
   line-height: var(--p-line-height);
 }
 .landing .change-background {
@@ -620,6 +621,119 @@ header nav .form svg {
   margin-bottom: 30px;
 }
 .statics .box p {
-  font-size: 0.875rem;
+  font-size: var(--small-font-size);
 }
 /** End Statics */
+
+/** Start Skills */
+.skills .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+@media (min-width: 992px) {
+  .skills .container > div {
+    flex-basis: 45%;
+  }
+}
+.skills .container > div > h3 {
+  margin-bottom: 1.875rem;
+  font-weight: normal;
+  text-align: center;
+  text-transform: uppercase;
+}
+.skills .container > div > p {
+  color: var(--light-color);
+  text-align: center;
+  margin-bottom: 3.75rem;
+  line-height: var(--p-line-height);
+}
+.skills .testimonials .box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.875rem;
+  margin-bottom: 1.875rem;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .skills .testimonials .box {
+    flex-direction: row;
+  }
+}
+.skills .testimonials .box img {
+  width: 6.25rem;
+  border-radius: 50%;
+}
+.skills .testimonials .text {
+  line-height: var(--p-line-height);
+  border-bottom: 1px solid #ccc;
+}
+@media (min-width: 768px) {
+  .skills .testimonials .text {
+    text-align: start;
+  }
+}
+.skills .testimonials .text p {
+  color: var(--light-color);
+  text-align: right;
+  font-size: var(--small-font-size);
+  margin-bottom: 0.625rem;
+}
+.skills .testimonials .bullets {
+  margin-top: 3.125rem;
+  margin-bottom: 3.125rem;
+  display: flex;
+  justify-content: center;
+}
+.skills .testimonials .bullets li {
+  width: var(--small-icon-width);
+  height: var(--small-icon-width);
+  border: 2px solid #aaa;
+  border-radius: 50%;
+  margin-right: 0.625rem;
+}
+.skills .testimonials .bullets li.active {
+  background-color: var(--primary-color);
+}
+.skills .our-skills .prog-holder {
+  margin-bottom: 2.5rem;
+}
+.skills .our-skills .prog-holder > h4 {
+  font-weight: normal;
+  margin-bottom: 0.625rem;
+  text-transform: uppercase;
+}
+.skills .our-skills .prog-holder .prog {
+  width: 100%;
+  height: 1.875rem;
+  background-color: #dedadc;
+}
+.skills .our-skills .prog-holder .prog span {
+  display: block;
+  height: 100%;
+  background-color: var(--primary-color);
+  position: relative;
+}
+.skills .our-skills .prog-holder .prog span::before {
+  content: attr(data-progress);
+  position: absolute;
+  color: white;
+  background-color: black;
+  border-radius: 0.25rem;
+  padding: 0.3125rem;
+  top: -2.5rem;
+  right: 0;
+  transform: translateX(50%);
+}
+.skills .our-skills .prog-holder .prog span::after {
+  content: "";
+  position: absolute;
+  border: 0.625rem solid transparent;
+  border-top-color: black;
+  right: 0;
+  top: -0.8125rem;
+  transform: translateX(50%);
+}
+/** End Skills */
