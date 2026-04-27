@@ -17,6 +17,7 @@
   /* Transitions */
   --main-transition: 0.3s;
 }
+
 /** Start Global Rules */
 * {
   box-sizing: border-box;
@@ -763,3 +764,7 @@ header nav .form svg {
   display: block;
 }
 /** End Quote */
+
+/** Start Pricing */
+
+/** End Pricing */
