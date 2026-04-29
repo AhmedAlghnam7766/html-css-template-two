@@ -766,5 +766,82 @@ header nav .form svg {
 /** End Quote */
 
 /** Start Pricing */
-
+.pricing .plans {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15.625rem, 1fr));
+  gap: 1.875rem;
+}
+.pricing .plans .plan {
+  background-color: #fcfcfc;
+  text-align: center;
+}
+.pricing .plans .plan .head {
+  padding: 2.5rem 1.25rem;
+  border-top: 1px solid var(--primary-color);
+}
+.pricing .plans .plan .head h3 {
+  font-weight: normal;
+  margin-bottom: 1.25rem;
+  text-transform: uppercase;
+}
+.pricing .plans .plan .head span {
+  font-size: 3.75rem;
+  font-weight: bold;
+}
+.pricing .plans .plan .head span::before {
+  content: attr(price-tag);
+  font-size: 1.5625rem;
+  position: relative;
+  top: -2.5rem;
+  margin-right: 0.9375rem;
+  font-weight: normal;
+}
+.pricing .plans .plan .head span::after {
+  content: "/BM";
+  font-size: 1.5625rem;
+  position: relative;
+  right: -0.9375rem;
+}
+.pricing .plans .plan ul {
+  border-bottom: 1px solid var(--primary-color);
+}
+.pricing .plans .plan ul li {
+  padding: 1.25rem;
+  position: relative;
+}
+.pricing .plans .plan ul li:not(:last-child)::after {
+  content: "";
+  width: 7.5rem;
+  height: 1px;
+  background: var(--primary-color);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+}
+.pricing .plans .plan .foot a {
+  display: block;
+  padding: 1.25rem;
+  border: 1px solid var(--primary-color);
+  width: fit-content;
+  margin: 1.875rem auto;
+}
+.pricing .contact-text {
+  text-align: center;
+  margin: 3.125rem auto 1.25rem;
+  font-size: 1.25rem;
+}
+.pricing .contact-link {
+  text-align: center;
+  display: block;
+  background: var(--primary-color);
+  width: fit-content;
+  padding: 1.125rem 1.875rem;
+  color: white;
+  margin: 0 auto;
+  transition: 0.3s;
+}
+.pricing .contact-link:hover {
+  transform: scale(105%);
+}
 /** End Pricing */
