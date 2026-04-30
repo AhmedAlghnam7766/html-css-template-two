@@ -914,9 +914,10 @@ header nav .form svg {
   width: 8.125rem;
   background-color: var(--primary-color);
   color: white;
-  padding: 10px 20px;
+  padding: 0.625rem 1.25rem;
   border: 1px solid white;
   border-left: none;
+  cursor: pointer;
 }
 .subscribe form input[type="email"]:focus,
 .subscribe form input[type="submit"]:focus {
@@ -924,5 +925,80 @@ header nav .form svg {
   outline: none;
 }
 .subscribe p {
+  line-height: var(--p-line-height);
+}
+
+/** == CONTACT == */
+.contact.section .content {
+  display: flex;
+  justify-content: space-between;
+}
+@media (max-width: 767px) {
+  .contact.section .content {
+    flex-direction: column;
+  }
+}
+.contact.section .content form {
+  flex-basis: 70%;
+}
+.contact.section .content form .main-input {
+  padding: 1.25rem;
+  display: block;
+  width: 100%;
+  border: 1px solid #ccc;
+  margin-bottom: 1.875rem;
+}
+.contact.section .content form .main-input:focus {
+  outline: none;
+}
+.contact.section .content form textarea.main-input {
+  height: 12.5rem;
+}
+.contact.section .content form input[type="submit"] {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 1.25rem;
+  border: none;
+  cursor: pointer;
+  /* Good to make it go to right */
+  display: flex;
+  margin-left: auto;
+}
+@media (max-width: 767px) {
+  .contact.section .content form input[type="submit"] {
+    margin: 0 auto;
+  }
+}
+.contact.section .content .info {
+  flex-basis: 25%;
+}
+@media (max-width: 767px) {
+  .contact.section .content .info {
+    text-align: center;
+    margin-top: 2.5rem;
+  }
+}
+
+.contact.section .content .info h4 {
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-bottom: 1.875rem;
+  font-size: 1.125rem;
+}
+.contact.section .content .info .phone {
+  display: block;
+  margin-bottom: 0.625rem;
+  color: var(--light-color);
+}
+.contact.section .content .info h4:nth-of-type(2) {
+  margin-top: 5.625rem;
+}
+@media (max-width: 767px) {
+  .contact.section .content .info h4:nth-of-type(2) {
+    margin-top: 1.875rem;
+  }
+}
+.contact.section .content .info address {
+  color: var(--light-color);
   line-height: var(--p-line-height);
 }
